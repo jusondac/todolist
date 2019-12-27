@@ -1,0 +1,28 @@
+<%= form_with(model: todo_list, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+
+  <table class="table">
+    <thread>
+      <tr>
+        <th></th>
+        <th>Task Name</th>
+        <th>Completed</th>
+        <th>Due</th>
+      </tr>
+    </thread>
+    <tbody class="fields">
+      <%= form.fields_for :tasks do |builder| %>
+        <%= render 'task' %>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="actions">
+    <%= form.submit %>
+    <%= link_to_add_row %>
+  </div>
+<% end %>

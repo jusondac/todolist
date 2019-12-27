@@ -1,0 +1,8 @@
+<tr>
+  <td>
+  	<%= link_to 'Delete','#',class: 'remove_record'%>
+  </td>
+  <td><%= text_field_tag "name", nil %></td>
+  <td><%= select_tag "completed", options_for_select([true,false], true)%></td>
+  <td><%= text_field_tag "due"%></td>	
+</tr>
